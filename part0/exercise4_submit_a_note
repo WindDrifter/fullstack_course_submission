@@ -1,0 +1,13 @@
+
+note over browser:
+User click on the text box
+type in note
+press submit
+end note
+
+browser->server: HTTP POST https://fullstack-exampleapp.herokuapp.com/new_note
+note over browser:
+From data: {note: "this is an note"}
+end note
+
+server->browser: Code 302 redirect back to notes page

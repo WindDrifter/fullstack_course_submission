@@ -1,0 +1,18 @@
+note over browser:
+User click on the text box
+type in note
+press submit
+end note
+
+browser->server: HTTP POST https://fullstack-exampleapp.herokuapp.com/new_note_spa
+note over browser:
+From data: {content: "this is an note", date: "2019-08-21"}
+end note
+
+server->browser: Code 201 {message: "this is an note"}
+
+note over browser:
+the application then redraw the page and
+append the latest note at the bottom of the list
+above the text box
+end note
