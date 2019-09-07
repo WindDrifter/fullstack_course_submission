@@ -16,8 +16,11 @@ const App = () => {
   };
   const removeContact = (event)=> {
     event.preventDefault();
-    remove(event.target.value).then(()=> {;
-    getAll().then(allPersons => {setPersons(allPersons)})});
+    const id = event.target.value;
+    remove(id);
+    let copy = [...persons]
+    copy = copy.filter(person=> person.id!==id)
+    setPersons(copy)
   }
   const updatePhonebook = (newName, newPhone)=>{
     let existed = seeIfPersonExist(newName);
